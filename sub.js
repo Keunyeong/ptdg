@@ -10,3 +10,5 @@ turnBtn.addEventListener('click', () => {
         turn = true;
     } 
 });
+
+//아자아자
