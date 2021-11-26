@@ -1,6 +1,14 @@
+let diceNum = 1;
 function diceRoll(){
-  let diceNum = Math.floor(Math.random()*6)+1;
+  diceNum = Math.floor(Math.random()*6)+1;
+  const diceImage = document.querySelector("#diceImage");
+  let dice = "images/dice"+diceNum+".svg";
+  diceImage.innerHTML=`<img src="${dice}" >`;
   console.log(diceNum);
+}
+
+function diceImage(){
+  return "dice"+2+".svg"
 }
 
 //id 미정
