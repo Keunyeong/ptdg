@@ -10,13 +10,11 @@
 <body>
   <h1>Pig The Dice Game!</h1>
   
-  인원 수 <input type="number" id="people" min="1" max="10">
+  <input type="number" id="people" min="1" max="10">
 
-  <div id="dice">주사위</div>
-  <button id="rollBtn">Roll!!</button>
-  
-  <script type="text/javascript" src="main.js"></script>
-  <script type="text/javascript" src="sub.js"></script>
+  <button id="rollBtn" onclick="diceRoll()">Roll!!</button>
+  <div id="diceImage"></div>
+
   
   <div id="table">
     <div class="row">
@@ -26,5 +24,8 @@
     <span class="cell col4">점수</span>
     </div>
   </div>
+  
+  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="sub.js"></script>
 </body>
 </html>
