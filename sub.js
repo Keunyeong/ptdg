@@ -1,38 +1,50 @@
-// 일단 플레이어 수는 5로 고정
-// const numOfPeople = document.querySelector(".input");
 let diceNum = 1;
-function diceRoll(){
-  diceNum = Math.floor(Math.random()*6)+1;
+function diceRoll() {
+  diceNum = Math.floor(Math.random() * 6) + 1;
   const diceImage = document.querySelector("#diceImage");
-  let dice = "images/dice"+diceNum+".svg";
-  diceImage.innerHTML=`<img src="${dice}" >`;
+  let dice = "images/dice" + diceNum + ".svg";
+  diceImage.innerHTML = `<img src="${dice}" >`;
   console.log(diceNum);
 }
 
-function diceImage(){
-  return "dice"+2+".svg"
+function diceImage() {
+  return "dice" + 2 + ".svg";
 }
-n = 5;
-const arrOfMembers = Array.apply(null, Array(n)).map(function () {});
+
+const btnOfPoeole = document.querySelector("#peopleBtn");
+const inputOfPeople = document.querySelector("#people");
+const table = document.querySelector("#table");
 
 //player => id(=index)
-arrOfMembers.forEach(
-  (x, i) => (arrOfMembers[i] = { id: i, accScore: 0, nowScore: 0 })
-);
+
+function peopleCheck() {
+  const numOfPeople = inputOfPeople.value;
+  const arrOfMembers = Array.apply(null, Array(parseInt(numOfPeople))).map(
+    function () {}
+  );
+  arrOfMembers.forEach(
+    (_, i) => (arrOfMembers[i] = { id: i, nowScore: 0, accScore: 0 })
+  );
+  paintTable(arrOfMembers);
+  btnOfPoeole.className = "hidden";
+}
 
 function paintTable(arr) {
-  const div = document.createElement("div");
-  div.class = "row";
-  arr.forEach(function (x, i) {
+  arr.forEach(function (_, i) {
+    const div = document.createElement("div");
+    div.className = "row";
     const span1 = document.createElement("span");
+    span1.className = "cell col1";
     span1.innerText = `${arr[i].id}`;
     const span2 = document.createElement("span");
+    span2.className = "cell col2";
     span2.innerText = `${arr[i].nowScore}`;
     const span3 = document.createElement("span");
+    span3.className = "cell col3";
     span3.innerText = `${arr[i].accScore}`;
     div.appendChild(span1);
     div.appendChild(span2);
     div.appendChild(span3);
+    table.appendChild(div);
   });
-  return div;
-}  
+}
