@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,12 +9,53 @@
 </head>
 <body>
   <h1>Pig The Dice Game!</h1>
-  
-  <button>Roll!!</button>
 
+  
+  인원 수 <input type="number" id="people" min="1" max="10">
+
+  <div id="dice">주사위</div>
+  <button id="rollBtn">Roll!!</button>
   
   <script type="text/javascript" src="main.js"></script>
   <script type="text/javascript" src="sub.js"></script>
+  
+  <div id="table">
+    <div class="row">
+    <span class="cell col1">차례</span>
+    <span class="cell col2">회차</span>
+    <span class="cell col3">주사위 결과</span>
+    <span class="cell col4">점수</span>
+    </div>
+    <div class="row">
+      <span class="cell col1">1-1</span>
+      <span class="cell col2">1-2</span>
+      <span class="cell col3">1-3</span>
+      <span class="cell col4">1-4</span>
+    </div>
+    <div class="row">
+      <span class="cell col1">2-1</span>
+      <span class="cell col2">2-2</span>
+      <span class="cell col3">2-3</span>
+      <span class="cell col4">2-4</span>
+      </div>
+    <div class="row">
+      <span class="cell col1">3-1</span>
+      <span class="cell col2">3-2</span>
+      <span class="cell col3">3-3</span>
+      <span class="cell col4">3-4</span>
+      </div>
+    <div class="row">
+      <span class="cell col1">4-1</span>
+      <span class="cell col2">4-2</span>
+      <span class="cell col3">4-3</span>
+      <span class="cell col4">4-4</span>
+    </div>
+    <div class="row">
+      <span class="cell col1">5-1</span>
+      <span class="cell col2">5-2</span>
+      <span class="cell col3">5-3</span>
+      <span class="cell col4">5-4</span>
+    </div>
+  </div>
 </body>
 </html>
->>>>>>> 725dd10f0fe7466fd243c130fadf7ddaf6fa2e24
