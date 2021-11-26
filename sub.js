@@ -35,4 +35,4 @@ function paintTable(arr) {
     div.appendChild(span3);
   });
   return div;
-}
+}  
