@@ -11,4 +11,4 @@ turnBtn.addEventListener('click', () => {
     } 
 });
 
-//아자아자
+//힘내!
