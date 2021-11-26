@@ -1,34 +1,58 @@
 h1 {
-    text-align: center;
-    margin: 0px;
+  text-align: center;
+  margin: 0px;
 }
 
+.hidden {
+  display: none;
+}
 
 #dice {
-    border: 3px solid rgb(146, 144, 144);
-    margin: auto;
-    padding: 20px;
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    line-height: 100px;
+  border: 3px solid rgb(146, 144, 144);
+  margin: auto;
+  padding: 20px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
 }
 
 #rollBtn {
-    width: 50px;
-    height: 30px;
-    margin: 10px;
+  width: 50px;
+  height: 30px;
+  margin: 10px;
 }
 
-#table {display: table; width: 70%; border: 2px solid; 
-    margin: 10px; text-align: center; line-height: 15px;}
-.row {display: table-row;}
-.cell {display: table-cell; padding: 3px; border-bottom: 2px solid #DDD; 
-    border-right: 2px solid black;}
-.col1 {width: 1px;}
-.col2 {width: 1px;}
-.col3 {width: 1px;}
-.col4 {width: 1px;}
+#table {
+  display: table;
+  width: 70%;
+  border: 2px solid;
+  margin: 10px;
+  text-align: center;
+  line-height: 15px;
+}
+.row {
+  display: table-row;
+}
+.cell {
+  display: table-cell;
+  padding: 3px;
+  border-bottom: 2px solid #ddd;
+  border-right: 2px solid black;
+}
+.col1 {
+  width: 1px;
+}
+.col2 {
+  width: 1px;
+}
+.col3 {
+  width: 1px;
+}
+.col4 {
+  width: 1px;
+}
+
 #diceImage {
-  width : 100px;
+  width: 100px;
 }
