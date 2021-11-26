@@ -3,8 +3,11 @@ function diceRoll(){
   diceNum = Math.floor(Math.random()*6)+1;
   const diceImage = document.querySelector("#diceImage");
   let dice = "images/dice"+diceNum+".svg";
-  diceImage.innerHTML=`<img src="${dice}" >`;
-  console.log(diceNum);
+  diceImage.innerHTML=`<img 
+                        class="animate__animated animate__rotateIn" 
+                        src="${dice}"
+                        style="border-radius:10px;"
+                        >`;
 }
 
 function diceImage(){
