@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +10,21 @@
 <body>
   <h1>Pig The Dice Game!</h1>
   
+  <input type="number" id="people" min="1" max="10">
+
   <button id="rollBtn" onclick="diceRoll()">Roll!!</button>
   <div id="diceImage"></div>
 
+  
+  <div id="table">
+    <div class="row">
+    <span class="cell col1">차례</span>
+    <span class="cell col2">회차</span>
+    <span class="cell col3">주사위 결과</span>
+    <span class="cell col4">점수</span>
+    </div>
+  </div>
+  
   <script type="text/javascript" src="main.js"></script>
   <script type="text/javascript" src="sub.js"></script>
 </body>
