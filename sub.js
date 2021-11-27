@@ -8,7 +8,9 @@ function diceRoll(){
                         src="${dice}"
                         style="border-radius:10px;"
                         >`;
+  
 }
+
 
 function diceImage(){
   return "dice"+2+".svg"
