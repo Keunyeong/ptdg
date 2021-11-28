@@ -14,20 +14,36 @@ turnBtn.addEventListener('click', () => {
 let currentScore = 0;
 let diceNum; // 랜덤 주사위로 나온 숫자
 
-if (diceNum === 1) {
-    currentScore = 0;
-    // 다음 사람 턴
-}   else {
+
+function checkScore (iPlayer) {
+    if (diceNum === 1) {
+        // 현재 점수 = 0, 턴 자동으로 넘기기
+        alert("0점입니다")
+        currentScore = 0;
+        return;
+    }
+    // 현재 점수 업데이트, 100 검증 함수 실행
     currentScore += diceNum;
-        if (currentScore >= 100) {
-            // 게임 종료
-        } else {
-            if(실행조건 ) { // 실행 O
-                // 주사위 함수 실행
-            } else {
-                // 다음 사람 턴
-                // 😃😃
-            }
-        }
+    if(checkHundred(currentScore)){
+         // 게임 종료
+        alert("게임 종료 승자는 누구")
+        return;
+    }
+    choiceGoOrStop();
 }
 
+function checkHundred(currentScore) {
+    if (currentScore >= 100) {
+        return true;
+    } 
+    return false;
+}
+
+function choiceGoOrStop () {
+    if() { // true(go)
+        // 주사위 버튼(Roll) 열림, 턴 버튼 닫힘
+        return;
+    }
+    // false(stop)
+    // 주사위 버튼(Roll) 닫힘, 턴 버튼 열림
+}
