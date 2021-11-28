@@ -16,12 +16,13 @@ function diceRoll() {
 const btnOfPoeole = document.querySelector("#peopleBtn");
 const inputOfPeople = document.querySelector("#people");
 const table = document.querySelector("#table");
-
-//player => id(=index)
+let arrOfMembers;
+export { arrOfMembers };
 
 function peopleCheck() {
   const numOfPeople = inputOfPeople.value;
-  const arrOfMembers = Array.apply(null, Array(parseInt(numOfPeople))).map(
+  // player => id(=index)
+  arrOfMembers = Array.apply(null, Array(parseInt(numOfPeople))).map(
     function () {}
   );
   arrOfMembers.forEach(
