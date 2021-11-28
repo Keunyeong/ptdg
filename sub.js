@@ -15,6 +15,7 @@ const btnOfPoeole = document.querySelector("#peopleBtn");
 const inputOfPeople = document.querySelector("#people");
 const table = document.querySelector("#table");
 let arrOfMembers;
+export { arrOfMembers };
 
 function peopleCheck() {
   const numOfPeople = inputOfPeople.value;
