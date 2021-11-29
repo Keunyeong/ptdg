@@ -54,5 +54,6 @@ h1 {
 }
 
 #diceImage {
-  width: 100px;
+  width : 100px;
+  padding : 20px;
 }
