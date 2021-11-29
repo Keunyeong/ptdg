@@ -12,10 +12,10 @@ function diceImage() {
 }
 
 const btnOfPoeole = document.querySelector("#peopleBtn");
+const btnOfRoll = document.querySelector("#rollBtn");
 const inputOfPeople = document.querySelector("#people");
 const table = document.querySelector("#table");
 let arrOfMembers;
-export { arrOfMembers };
 
 function peopleCheck() {
   const numOfPeople = inputOfPeople.value;
@@ -28,6 +28,7 @@ function peopleCheck() {
   );
   paintTable(arrOfMembers);
   btnOfPoeole.className = "hidden";
+  btnOfRoll.classList.remove("hidden");
 }
 
 function paintTable(arr) {
