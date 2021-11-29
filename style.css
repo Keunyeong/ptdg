@@ -7,6 +7,10 @@ h1 {
   display: none;
 }
 
+#people {
+  text-align: center;
+}
+
 #dice {
   border: 3px solid rgb(146, 144, 144);
   margin: auto;
