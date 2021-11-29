@@ -11,6 +11,8 @@ turnBtn.addEventListener('click', () => {
     } 
 });
 
+import { arrOfMembers } from "sub.js";
+
 let currentScore = 0;
 let diceNum; // 랜덤 주사위로 나온 숫자
 
@@ -25,8 +27,8 @@ function checkScore (iPlayer) {
     // 현재 점수 업데이트, 100 검증 함수 실행
     currentScore += diceNum;
     if(checkHundred(currentScore)){
-         // 게임 종료
-        alert("게임 종료 승자는 누구")
+        // 게임 종료
+        setGameOver(iPlayer);
         return;
     }
     choiceGoOrStop();
@@ -46,4 +48,10 @@ function choiceGoOrStop () {
     }
     // false(stop)
     // 주사위 버튼(Roll) 닫힘, 턴 버튼 열림
+}
+
+function setGameOver (iPlayer) {
+    // 전체 실행 안 되게..?
+    // [Game Over
+    // Winner is iPlayer]
 }
