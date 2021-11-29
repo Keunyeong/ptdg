@@ -1,4 +1,4 @@
-let turn = true;
+let turn = false;
 const turnBtn = document.getElementById('turnBtn');
 
 //턴 넘기기
@@ -7,7 +7,7 @@ turnBtn.addEventListener('click', () => {
     if(turn) {
         //다음 차례로 넘기기
 
-        turn = true;
+        turn = false;
     } 
 });
 
