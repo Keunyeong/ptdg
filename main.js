@@ -11,11 +11,12 @@ turnBtn.addEventListener('click', () => {
     } 
 });
 
-import { arrOfMembers } from "sub.js";
 
 let currentScore = 0;
 let diceNum; // 랜덤 주사위로 나온 숫자
 
+const gameOver = document.createElement('div');
+const replayBut = document.createElement("button");
 
 function checkScore (iPlayer) {
     if (diceNum === 1) {
@@ -52,6 +53,9 @@ function choiceGoOrStop () {
 
 function setGameOver (iPlayer) {
     // 전체 실행 안 되게..?
-    // [Game Over
-    // Winner is iPlayer]
+    document.getElementById("dice-table").style.display="none";
+    // [Game Over]
+    gameOver.append("Game Over");
+    // replay 버튼
+    replayBut.innerText = "REPLAY"
 }
