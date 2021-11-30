@@ -1,6 +1,5 @@
 h1 {
   text-align: center;
-  margin: 0px;
 }
 
 .hidden {
@@ -11,14 +10,18 @@ h1 {
   text-align: center;
 }
 
-#dice {
-  border: 3px solid rgb(146, 144, 144);
-  margin: auto;
-  padding: 20px;
-  width: 100px;
-  height: 100px;
+#dice-table {
   text-align: center;
-  line-height: 100px;
+  margin: 0 auto;
+  padding: 20px 20px;
+  width: 300px;
+  height: 250px;
+  border: 1px solid peachpuff;
+}
+
+.pig-image {
+  width: 50px;
+  height: 50px;
 }
 
 #rollBtn {
@@ -27,11 +30,15 @@ h1 {
   margin: 10px;
 }
 
+#diceImage {
+  margin: 20px auto;
+}
+
 #table {
   display: table;
   width: 70%;
   border: 2px solid;
-  margin: 10px;
+  margin: 20px auto;
   text-align: center;
   line-height: 15px;
 }
