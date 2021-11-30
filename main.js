@@ -6,7 +6,7 @@ turnBtn.addEventListener('click', () => {
     turn = !turn;
     if(turn) {
         //다음 차례로 넘기기
-
+        //인강 시간 너무 길어요
         turn = false;
     } 
 });
@@ -42,7 +42,7 @@ function checkHundred(currentScore) {
 }
 
 function choiceGoOrStop () {
-    if() { // true(go)
+    if(1) { // true(go)
         // 주사위 버튼(Roll) 열림, 턴 버튼 닫힘
         return;
     }
