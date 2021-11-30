@@ -1,17 +1,13 @@
-
 function diceRoll() {
   let diceNum = Math.floor(Math.random() * 6) + 1;
   const diceImage = document.querySelector("#diceImage");
-  let dice = "images/dice"+diceNum+".svg";
-  diceImage.innerHTML=`<img 
+  let dice = "images/dice" + diceNum + ".svg";
+  diceImage.innerHTML = `<img 
                         class="animate__animated animate__rotateIn" 
                         src="${dice}"
                         style="border-radius:10px;"
                         >`;
-  
 }
-
-
 
 const btnOfPoeole = document.querySelector("#peopleBtn");
 const btnOfRoll = document.querySelector("#rollBtn");
@@ -32,6 +28,7 @@ function peopleCheck() {
   btnOfPoeole.className = "hidden";
   btnOfRoll.classList.remove("hidden");
 }
+export { arrOfMembers };
 
 function paintTable(arr) {
   arr.forEach(function (_, i) {
