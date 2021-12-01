@@ -13,6 +13,7 @@ const btnOfPoeole = document.querySelector("#peopleBtn");
 const btnOfRoll = document.querySelector("#rollBtn");
 const inputOfPeople = document.querySelector("#people");
 const table = document.querySelector("#table");
+const diceTable = document.querySelector("dice-table");
 let arrOfMembers;
 
 function peopleCheck() {
@@ -26,21 +27,23 @@ function peopleCheck() {
   );
   paintTable(arrOfMembers);
   btnOfPoeole.className = "hidden";
+  inputOfPeople.className = "hidden";
   btnOfRoll.classList.remove("hidden");
 }
+
 function paintTable(arr) {
   arr.forEach(function (_, i) {
     const div = document.createElement("div");
     div.className = "row";
     const span1 = document.createElement("span");
     span1.className = "cell col1";
-    span1.innerText = `${arr[i].id}`;
+    span1.innerText = arr[i].id + 1;
     const span2 = document.createElement("span");
     span2.className = "cell col2";
-    span2.innerText = `${arr[i].nowScore}`;
+    span2.innerText = arr[i].nowScore;
     const span3 = document.createElement("span");
     span3.className = "cell col3";
-    span3.innerText = `${arr[i].accScore}`;
+    span3.innerText = arr[i].accScore;
     div.appendChild(span1);
     div.appendChild(span2);
     div.appendChild(span3);
