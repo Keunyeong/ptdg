@@ -7,22 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PigTheDiceGame</title>
   <link rel="stylesheet" href="style.css">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body>
   <h1 class="animate__animated animate__bounce">
-    <image class="pig-image" src="https://w.namu.la/s/e38a348c214efdcc10a415c3026c8549af34fd06214a4dfc0b6dae9252fab5c6145a7e6702eca2540986501711dbc1ca1de25a6fff7a06e49082f23378dd640b256310e8c45fdb09cebe5b5292095b1bfd27599d169b08cf7d28018bb42236a3"
-    />Pig The Dice Game!
+    <image class="pig-image" src="./images/pngwing.png" />
+    Pig The Dice Game!
   </h1>
   <div id="dice-table">
-   <input type="number" id="people" min="1" max="10">
-   <button id="peopleBtn" onclick="peopleCheck()">인원 설정</button>
-   <button id="rollBtn" class="hidden" onclick="diceRoll()">Roll!!</button>
-   <div id="diceImage"></div>
+    <input type="number" id="people" min="1" max="10">
+    <button id="peopleBtn">인원 설정</button>
+    <button id="rollBtn" class="hidden">Roll!!</button>
+    <button id="turnBtn" class="hidden">턴 넘기기</button>
+    <div id="diceImage"></div>
   </div>
 
 
@@ -34,8 +32,8 @@
     </div>
   </div>
 
-  <script type="text/javascript" src="./main.js"></script>
-  <script type="text/javascript" src="./sub.js"></script>
+  <script type="module" src="./main.js"></script>
+  <script type="module" src="./sub.js"></script>
 </body>
 
 </html>
