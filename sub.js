@@ -28,6 +28,7 @@ function peopleCheck() {
   btnOfPoeole.className = "hidden";
   btnOfRoll.classList.remove("hidden");
 }
+
 function paintTable(arr) {
   arr.forEach(function (_, i) {
     const div = document.createElement("div");
