@@ -18,6 +18,7 @@ const diceTable = document.querySelector("dice-table");
 const turnBtn = document.querySelector("#turnBtn");
 let arrOfMembers;
 
+
 function peopleCheck() {
 const numOfPeople = inputOfPeople.value;
 // player => id(=index)
@@ -57,19 +58,36 @@ arr.forEach(function (_, i) {
 btnOfPoeole.addEventListener("click", peopleCheck);
 btnOfRoll.addEventListener("click", diceRoll);
 
-let turn = false;
+
+// 설정되는 인원 만큼 score: 0 을 갖은 객체 배열 생성 -> 설정 사라지고 
+// 테이블 생성 // roll 버튼 위에 차례가 누군지 보여주기 ex) 1번 차례입니다! 
+// 테이블에 차례 row 하이라이트 
+// 주사위 굴리면 
+// roll 버튼이랑 턴 넘기기 버튼 보이기 
+// 1 나오면 헌재점수 삭제 -> 턴넘기기 
+// 1 이 아니면 현재점수에 추가 
+// 턴넘기기 하면 현재점수를 전부 score에 넣고 다음 인덱스로 
+// roll 버튼 위에 차례가 누군지 보여주기 ex) 2번 차례입니다! 
+// 배열 인덱스 +1 해서 다음 객체로 넘김 // 계속 넘어가다가 설정 인원 -1 보다 커지면 인덱스 0 객체로 돌아오도록 
+// 현재 점수에 추가 될 때마다 객체 score: 100 인지 확인 
+// score 100이면 다지우고 인덱스 번호 +1 (차례번호)가 승리하였습니다. 보여주고 
+// 승리 밑에 다시하기 버튼.
+
+let currentIndex = 0;
+
 
 //턴 넘기기
 function turnChange() {
-    turn = !turn;
-    if(turn) {
-        //다음 차례로 넘기기
-        //인강 시간 너무 길어요
-        turn = false;
-    } 
+    //다음 차례로 넘기기
+    arrOfMembers[currentIndex].accScore += currentScore;
+    currentScore = 0;
+    if(arrOfMembers[-1].id === currentIndex) {
+        currentIndex = 0;
+    } else {
+        currentIndex++;
+    }
 };
 
-let currentScore = 0;
 
 const gameOver = document.createElement('div');
 const replayBut = document.createElement("button");
