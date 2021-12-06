@@ -24,6 +24,9 @@ const turnBtn = document.querySelector("#turnBtn");
 let diceNum=0;
 let currentScore = 0;
 let currentIndex = 0;
+let numOfPeople = 2;
+let arrOfMembers = [];
+
 function diceRoll() {
     diceNum = Math.floor(Math.random() * 6) + 1;
     const diceImage = document.querySelector("#diceImage");
@@ -39,23 +42,20 @@ function diceRoll() {
 btnOfRoll.addEventListener("click",diceRoll());
 
 
-let arrOfMembers = [];
-
-let numOfPeople = 1;
 function peopleCheck() {
-numOfPeople = inputOfPeople.value;
-// player => id(=index)
-arrOfMembers = Array.apply(null, Array(parseInt(numOfPeople))).map(
-    function () {}
-);
-arrOfMembers.forEach(
-    (_, i) => (arrOfMembers[i] = { id: i, nowScore: 0, accScore: 0 })
-);
-paintTable(arrOfMembers);
-btnOfPoeole.className = "hidden";
-inputOfPeople.className = "hidden";
-btnOfRoll.classList.remove("hidden");
-turnBtn.classList.remove("hidden");
+  numOfPeople = inputOfPeople.value;
+  // player => id(=index)
+  arrOfMembers = Array.apply(null, Array(parseInt(numOfPeople))).map(
+      function () {}
+  );
+  arrOfMembers.forEach(
+      (_, i) => (arrOfMembers[i] = { id: i, nowScore: 0, accScore: 0 })
+  );
+  paintTable(arrOfMembers);
+  btnOfPoeole.className = "hidden";
+  inputOfPeople.className = "hidden";
+  btnOfRoll.classList.remove("hidden");
+  turnBtn.classList.remove("hidden");
 }
 
 
@@ -83,16 +83,16 @@ function paintTable(arr) {
 btnOfPoeole.addEventListener("click", peopleCheck);
 btnOfRoll.addEventListener("click", diceRoll);
 
-let turn = false;
-
 //턴 넘기기
 function turnChange() {
-    turn = !turn;
-    if(turn) {
-        //다음 차례로 넘기기
-        //인강 시간 너무 길어요
-        turn = false;
-    } 
+    //다음 차례로 넘기기
+    arrOfMembers[currentIndex].accScore += currentScore;
+    currentScore = 0;
+    if(arrOfMembers[-1].id === currentIndex) {
+        currentIndex = 0;
+    } else {
+        currentIndex++;
+    }
 };
 
 // 2주사위 1나오면
