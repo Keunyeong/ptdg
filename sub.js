@@ -14,6 +14,7 @@ const btnOfRoll = document.querySelector("#rollBtn");
 const inputOfPeople = document.querySelector("#people");
 const table = document.querySelector("#table");
 const diceTable = document.querySelector("dice-table");
+const turnBtn = document.querySelector("#turnBtn");
 let arrOfMembers;
 
 function peopleCheck() {
@@ -29,6 +30,7 @@ function peopleCheck() {
   btnOfPoeole.className = "hidden";
   inputOfPeople.className = "hidden";
   btnOfRoll.classList.remove("hidden");
+  turnBtn.classList.remove("hidden");
 }
 
 function paintTable(arr) {
@@ -50,3 +52,8 @@ function paintTable(arr) {
     table.appendChild(div);
   });
 }
+
+btnOfPoeole.addEventListener("click", peopleCheck);
+btnOfRoll.addEventListener("click", diceRoll);
+
+export default arrOfMembers;
