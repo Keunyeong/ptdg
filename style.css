@@ -7,21 +7,46 @@ body {
   background-color: #20273a;
   font-weight: 300;
   color: #a7a1ae;
+  padding: 10px;
 }
+
 h1 {
   text-align: center;
   color: #fef846;
   font-size: 50px;
   font-weight: 400;
 }
+
+.nowTurn{
+  width: 250px;
+  height: 30px;
+  letter-spacing: 3px;
+  color: #20273a;
+  font-weight: bold;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 10px 10px;
+  background-color: rgb(236, 224, 56);
+  margin: 20px auto 10px;
+}
+
+.inputTable {
+  text-align: center;
+}
+
 button {
   height: 44px;
-  width: 80px;
+  width: 100px;
   background-color: #fb667a;
   border: none;
   border-radius: 10px;
-  color: #ddd;
+  color: rgba(255, 255, 255, 0.849);
   font-size: 18px;
+  margin: 1px;
+}
+
+button:hover {
+  background-color: #b14856;
 }
 
 .hidden {
@@ -34,11 +59,12 @@ button {
 
 #dice-table {
   text-align: center;
-  margin: 0 auto;
-  padding: 20px 20px;
+  line-height: 250px;
+  margin: 10px auto 0;
   width: 300px;
   height: 250px;
   border: 1px solid peachpuff;
+  background-color: white;
 }
 
 .pig-image {

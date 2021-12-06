@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PigTheDiceGame</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="icon" href="./images/pngwing.png" />
@@ -13,17 +14,22 @@
 
 <body>
   <h1 class="animate__animated animate__bounce">
-    <image class="pig-image" src="./images/pngwing.png" />
+    <image class="pig-image" src="./images/pngwing.png" alt="요정 돼지" />
     Pig The Dice Game!
   </h1>
-  <div id="dice-table">
-    <input type="number" id="people" min="1" max="10">
+
+  <div class="nowTurn"><span id="turNumber">1</span>번 차례입니다!</div>
+  <div class="inputTable">
+    <input type="number" id="people" min="2" max="10" value="2">
     <button id="peopleBtn">인원 설정</button>
     <button id="rollBtn" class="hidden">Roll!!</button>
     <button id="turnBtn" class="hidden">턴 넘기기</button>
-    <div id="diceImage"></div>
+  </div>
+  <div id="dice-table">
+      <div id="diceImage"></div>
   </div>
 
+ 
 
   <div id="table">
     <div class="row">
