@@ -72,17 +72,26 @@ function turnChange() {
 let currentScore = 0;
 
 const gameOver = document.createElement('div');
+const printNowScore = document.getElementsByClassName("cell col2");
+const printAccScore = document.getElementsByClassName("cell col3");
 const replayBut = document.createElement("button");
+replayBut.addEventListener("click", window.location.reload());
+replayBut.innerText("REPLAY");
 
 function checkScore (iPlayer) {
     if (diceNum === 1) {
         // 현재 점수 = 0, 턴 자동으로 넘기기
+        printNowScore.innerText = diceNum;
+        printAccScore.innerText = diceNum;
         alert("0점입니다")
         currentScore = 0;
         return;
     }
     // 현재 점수 업데이트, 100 검증 함수 실행
     currentScore += diceNum;
+    printNowScore.innerText = diceNum;
+    printAccScore.innerText = diceNum;
+
     if(checkHundred(currentScore)){
         // 게임 종료
         setGameOver(iPlayer);
@@ -112,11 +121,11 @@ function choiceGoOrStop () {
 }
 
 function setGameOver (iPlayer) {
-    document.getElementById("dice-table").style.display="none";
+    diceTable.classList.add("hidden");
+
     // [Game Over]
     gameOver.append("Game Over");
+    
     // replay 버튼
-    const replayBut = document.createElement('button');
-    replayBut.appendChild("REPLAY");
     document.body.appendChild(replayBut);
 }
