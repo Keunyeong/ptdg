@@ -111,15 +111,19 @@ function accountNum(diceNum){
 const gameOver = document.createElement('div');
 const printNowScore = document.getElementsByClassName("cell col2");
 const printAccScore = document.getElementsByClassName("cell col3");
+
 const replayBut = document.createElement("button");
 replayBut.addEventListener("click", window.location.reload());
 replayBut.innerText("REPLAY");
 
+
 function checkScore (iPlayer) {
     if (diceNum === 1) {
         // 현재 점수 = 0, 턴 자동으로 넘기기
+
         printNowScore.innerText = diceNum;
         printAccScore.innerText = diceNum;
+        
         alert("0점입니다")
         currentScore = 0;
         return;
@@ -159,10 +163,8 @@ function choiceGoOrStop () {
 
 function setGameOver (iPlayer) {
     diceTable.classList.add("hidden");
-
     // [Game Over]
     gameOver.append("Game Over");
-    
     // replay 버튼
     document.body.appendChild(replayBut);
 }
