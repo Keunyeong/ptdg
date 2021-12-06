@@ -11,6 +11,7 @@ turnBtn.addEventListener('click', () => {
     } 
 });
 
+import { arrOfMembers } from "sub.js";
 
 let currentScore = 0;
 let diceNum; // 랜덤 주사위로 나온 숫자
@@ -45,17 +46,22 @@ function checkHundred(currentScore) {
 function choiceGoOrStop () {
     if(1) { // true(go)
         // 주사위 버튼(Roll) 열림, 턴 버튼 닫힘
+        btnOfRoll.classList.remove("hidden");
+        turnBtn.classList.add("hidden");
         return;
     }
     // false(stop)
     // 주사위 버튼(Roll) 닫힘, 턴 버튼 열림
+    btnOfRoll.classList.add("hidden");
+    turnBtn.classList.remove("hidden");
 }
 
 function setGameOver (iPlayer) {
-    // 전체 실행 안 되게..?
     document.getElementById("dice-table").style.display="none";
     // [Game Over]
     gameOver.append("Game Over");
     // replay 버튼
-    replayBut.innerText = "REPLAY"
+    const replayBut = document.createElement('button');
+    replayBut.appendChild("REPLAY");
+    document.body.appendChild(replayBut);
 }
