@@ -17,15 +17,19 @@
     <image class="pig-image" src="./images/pngwing.png" alt="요정 돼지" />
     Pig The Dice Game!
   </h1>
-  <div class="now-turn">@번 차례입니다!</div>
-  <div id="dice-table">
+
+  <div class="nowTurn"><span id="turNumber">1</span>번 차례입니다!</div>
+  <div class="inputTable">
     <input type="number" id="people" min="2" max="10" value="2">
     <button id="peopleBtn">인원 설정</button>
     <button id="rollBtn" class="hidden">Roll!!</button>
     <button id="turnBtn" class="hidden">턴 넘기기</button>
-    <div id="diceImage"></div>
+  </div>
+  <div id="dice-table">
+      <div id="diceImage"></div>
   </div>
 
+ 
 
   <div id="table">
     <div class="row">
