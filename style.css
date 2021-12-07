@@ -1,0 +1,143 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+/*--COMMON--*/
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #20273a;
+  font-weight: 300;
+  color: #a7a1ae;
+  padding: 10px;
+
+}
+
+body > .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title > h1 {
+  text-align: center;
+  color: #fef846;
+  font-size: 50px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.title > h5 {
+  text-align: center;
+  min-width: 300px;
+  max-width: 400px;
+  line-height: 20px;
+}
+
+.nowTurn{
+  width: 250px;
+  height: 30px;
+  letter-spacing: 3px;
+  color: #20273a;
+  font-weight: bold;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 10px 10px;
+  background-color: rgb(236, 224, 56);
+  margin: 20px auto 10px;
+}
+
+body > #status > div {
+  text-align: center;
+  color: #fef846;
+  font-size: 100px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.inputTable {
+  text-align: center;
+}
+
+button {
+  height: 44px;
+  width: 100px;
+  background-color: #fb667a;
+  border: none;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.849);
+  font-size: 18px;
+  margin: 1px;
+}
+
+button:hover {
+  background-color: #b14856;
+}
+
+.hidden {
+  display: none;
+}
+
+#people {
+  text-align: center;
+}
+
+#dice-table {
+  text-align: center;
+  line-height: 250px;
+  margin: 10px auto 0;
+  width: 300px;
+  height: 250px;
+  border: 1px solid peachpuff;
+  background-color: white;
+}
+
+.pig-image {
+  width: 50px;
+  height: 50px;
+}
+
+#diceImage {
+  margin: 20px auto;
+}
+
+/*--TABLE--*/
+#table {
+  display: table;
+  width: 400px;
+  margin: 20px auto;
+  text-align: center;
+  line-height: 18px;
+}
+.row {
+  display: table-row;
+}
+.row:nth-child(even) {
+  background-color: #323c50;
+}
+.row:nth-child(odd) {
+  background-color: #2c3446;
+}
+.cell {
+  display: table-cell;
+  padding: 3px;
+}
+.row .cell + .cell {
+  border-left: 2px solid #20273a;
+}
+.col1 {
+  width: 1px;
+  color: #fb667a;
+}
+.col2 {
+  width: 1px;
+}
+.col3 {
+  width: 1px;
+}
+.col4 {
+  width: 1px;
+}
+
+#diceImage {
+  width: 100px;
+  padding: 20px;
+}
