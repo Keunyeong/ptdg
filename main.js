@@ -32,6 +32,7 @@ const turnNumber = document.querySelector("#turnNumber");
 // 현재 턴이 모은 점수, 상태 나타내는 요소
 const scoreStatus = document.querySelector("#status");
 
+
 let diceNum = 0;
 let currentScore = 0;
 let currentIndex = 0;
