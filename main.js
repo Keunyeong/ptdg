@@ -14,12 +14,23 @@
 // score 100이면 다지우고 인덱스 번호 +1 (차례번호)가 승리하였습니다. 보여주고
 // 승리 밑에 다시하기 버튼.
 
+// 인원 설정 버튼 요소
 const btnOfPoeole = document.querySelector("#peopleBtn");
+// Roll 버튼 요소
 const btnOfRoll = document.querySelector("#rollBtn");
+// 인원 설정 input 요소
 const inputOfPeople = document.querySelector("#people");
+// scoreboard table 요소
 const table = document.querySelector("#table");
+// dice 테이블 요소
 const diceTable = document.querySelector("dice-table");
 const btnOfTurn = document.querySelector("#turnBtn");
+// 현재턴 알렬주는 div
+const nowTurn = document.querySelector(".nowTurn");
+// 현재턴 알려주는 div > span
+const turnNumber = document.querySelector("#turnNumber");
+// 현재 턴이 모은 점수, 상태 나타내는 요소
+const scoreStatus = document.querySelector("#status");
 
 let diceNum = 0;
 let currentScore = 0;
@@ -51,6 +62,7 @@ function peopleCheck() {
   inputOfPeople.className = "hidden";
   btnOfRoll.classList.remove("hidden");
   btnOfTurn.classList.remove("hidden");
+  nowTurn.classList.remove("hidden");
 }
 
 function paintTable(arr) {
@@ -71,17 +83,29 @@ function paintTable(arr) {
 
 //턴 넘기기
 function turnChange() {
-  //다음 차례로 넘기기
+  // 1 이나오면 현재 점수는 0 점
+  // 현재점수 더하고 다음 차례로 넘기기
   arrOfMembers[currentIndex].accScore += currentScore;
-  table.children[currentIndex + 1].querySelector(".col2").innerText =
+  // 차례 인덱스가 갖은 총 점이 100점이 넘으면 승리 나타내고 버튼 감추기
+  if (arrOfMembers[currentIndex].accScore >= 100){
+    btnOfRoll.classList = "hidden";
+    btnOfTurn.classList = "hidden";
+    scoreStatus.innerHTML=`<div>${currentIndex+1}번 승리!!!</div>`;
+  } else { 
+    // 100점이 안되면 테이블에 점수 표기하고 현재점수 0점으로 바꿔주기
+    table.children[currentIndex + 1].querySelector(".col2").innerText =
     arrOfMembers[currentIndex].accScore;
-  //.innerText = arrOfMembers[currentIndex].accScore;
-  currentScore = 0;
-  if (arrOfMembers[arrOfMembers.length - 1].id === currentIndex) {
-    currentIndex = 0;
-  } else {
-    currentIndex++;
+    //.innerText = arrOfMembers[currentIndex].accScore;
+    currentScore = 0;
+    if (arrOfMembers[arrOfMembers.length - 1].id === currentIndex) {
+      currentIndex = 0;
+    } else {
+      currentIndex++;
+    }
+    scoreStatus.innerHTML=`<div>다음</div>`;
+    turnNumber.innerHTML=currentIndex+1;
   }
+  
 }
 
 // 2주사위 1나오면
@@ -93,59 +117,9 @@ function accountNum(diceNum) {
     currentScore = 0;
     turnChange();
   } else {
+    scoreStatus.innerHTML=`<div>${currentScore + diceNum}</div>`
     currentScore = currentScore + diceNum;
   }
-}
-
-const gameOver = document.createElement("div");
-const replayBut = document.createElement("button");
-
-function checkScore(iPlayer) {
-  if (diceNum === 1) {
-    // 현재 점수 = 0, 턴 자동으로 넘기기
-    alert("0점입니다");
-    currentScore = 0;
-    return;
-  }
-  // 현재 점수 업데이트, 100 검증 함수 실행
-  currentScore += diceNum;
-  if (checkHundred(currentScore)) {
-    // 게임 종료
-    setGameOver(iPlayer);
-    return;
-  }
-  choiceGoOrStop();
-}
-
-function checkHundred(currentScore) {
-  if (currentScore >= 100) {
-    return true;
-  }
-  return false;
-}
-
-function choiceGoOrStop() {
-  if (1) {
-    // true(go)
-    // 주사위 버튼(Roll) 열림, 턴 버튼 닫힘
-    btnOfRoll.classList.remove("hidden");
-    btnOfTurn.classList.add("hidden");
-    return;
-  }
-  // false(stop)
-  // 주사위 버튼(Roll) 닫힘, 턴 버튼 열림
-  btnOfRoll.classList.add("hidden");
-  btnOfTurn.classList.remove("hidden");
-}
-
-function setGameOver(iPlayer) {
-  document.getElementById("dice-table").style.display = "none";
-  // [Game Over]
-  gameOver.append("Game Over");
-  // replay 버튼
-  const replayBut = document.createElement("button");
-  replayBut.appendChild("REPLAY");
-  document.body.appendChild(replayBut);
 }
 
 btnOfPoeole.addEventListener("click", peopleCheck);
