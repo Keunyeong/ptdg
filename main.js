@@ -24,6 +24,7 @@ const inputOfPeople = document.querySelector("#people");
 const table = document.querySelector("#table");
 // dice 테이블 요소
 const diceTable = document.querySelector("dice-table");
+
 const btnOfTurn = document.querySelector("#turnBtn");
 // 현재턴 알렬주는 div
 const nowTurn = document.querySelector(".nowTurn");
@@ -51,21 +52,6 @@ function diceRoll() {
   accountNum(diceNum);
 }
 
-function peopleCheck() {
-  numOfPeople = inputOfPeople.value;
-  // player => id(=index)
-  arrOfMembers = Array.apply(null, Array(parseInt(numOfPeople))).map(
-    function () {}
-  );
-  arrOfMembers.forEach((_, i) => (arrOfMembers[i] = { id: i, accScore: 0 }));
-  paintTable(arrOfMembers);
-  btnOfPoeole.className = "hidden";
-  inputOfPeople.className = "hidden";
-  btnOfRoll.classList.remove("hidden");
-  btnOfTurn.classList.remove("hidden");
-  nowTurn.classList.remove("hidden");
-}
-
 function paintTable(arr) {
   arr.forEach(function (_, i) {
     const div = document.createElement("div");
@@ -80,6 +66,23 @@ function paintTable(arr) {
     div.appendChild(span2);
     table.appendChild(div);
   });
+}
+
+function peopleCheck() {
+  numOfPeople = inputOfPeople.value;
+  // player => id(=index)
+  arrOfMembers = Array.apply(null, Array(parseInt(numOfPeople))).map(
+    function () {}
+  );
+  arrOfMembers.forEach((_, i) => (arrOfMembers[i] = { id: i, accScore: 0 }));
+
+  paintTable(arrOfMembers);
+
+  btnOfPoeole.classList.add("hidden");
+  inputOfPeople.classList.add("hidden");
+  btnOfRoll.classList.remove("hidden");
+  btnOfTurn.classList.remove("hidden");
+  nowTurn.classList.remove("hidden");
 }
 
 //턴 넘기기

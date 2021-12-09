@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PigTheDiceGame</title>
   <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="icon" href="./images/pngwing.png" />
@@ -22,8 +21,11 @@
     </h1>
     <h5>자신의 차례에 주사위를 던져 점수를 모으세요. <br> 1 이 나오면 모은 점수가 사라지고 턴이 넘어갑니다.<br> 1 이 나오지 않고 턴을 넘기면 모은 점수를 갖을 수 있습니다.<br> 점수를 모아 총 점수 100점을 먼저 달성하세요!</h5>
   </div>
+
   <div class="nowTurn hidden"><span id="turnNumber">1</span>번 차례입니다!</div>
+
   <div id="status"></div>
+
   <div class="inputTable">
     <input type="number" id="people" min="2" max="10" value="2">
     <button id="peopleBtn">인원 설정</button>
@@ -33,7 +35,6 @@
   <div id="dice-table">
     <div id="diceImage"></div>
   </div>
-
   <div id="table">
     <div class="row">
       <span class="cell col1">차례</span>
